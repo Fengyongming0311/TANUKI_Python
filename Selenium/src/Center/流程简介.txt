@@ -1,0 +1,16 @@
+Center  总流程控制
+
+Data    打算放数据，目前还没放呢
+
+TestCore  打算弄成object 方式，目前还没实现
+
+TestPage   放最底层执行自动化的代码
+
+
+exp    写代码过程中学习到的知识
+
+unittest   放单元测试代码
+
+
+大致流程如下：
+Jenkins → 总流程控制如何执行 → 调用发送邮件 → 调用unittest执行总脚本 → 调用unittest单独执行脚本 → 调用自动化测试脚本
