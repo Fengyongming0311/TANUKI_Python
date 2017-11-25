@@ -1,2 +1,0 @@
-# TANUKI_Python
-TANUKI
