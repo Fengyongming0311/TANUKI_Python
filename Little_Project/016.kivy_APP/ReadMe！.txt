@@ -1,1 +1,0 @@
-实现Python + Kivy APP软件制作
