@@ -1,0 +1,39 @@
+1508395864106	geckodriver	INFO	geckodriver 0.18.0
+1508395864121	geckodriver	INFO	Listening on 127.0.0.1:9719
+1508395866234	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64.dll v=0.0.0.0
+1508395870372	Marionette	INFO	Listening on port 9725
+1508395871500	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://s1.bdstatic.com/r/www/cache/static/plugins/every_cookie_4644b13.js, line 4: ReferenceError: c is not defined
+1508395875150	geckodriver	INFO	geckodriver 0.18.0
+1508395875165	geckodriver	INFO	Listening on 127.0.0.1:9767
+1508395877288	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64.dll v=0.0.0.0
+1508395881590	Marionette	INFO	Listening on port 9773
+1508395882554	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508397117702	geckodriver	INFO	geckodriver 0.18.0
+1508397117702	geckodriver	INFO	Listening on 127.0.0.1:9971
+1508397119797	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64.dll v=0.0.0.0
+1508397124069	Marionette	INFO	Listening on port 9977
+1508397125066	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://s1.bdstatic.com/r/www/cache/static/plugins/every_cookie_4644b13.js, line 4: ReferenceError: c is not defined
+1508397128601	geckodriver	INFO	geckodriver 0.18.0
+1508397128616	geckodriver	INFO	Listening on 127.0.0.1:10016
+1508397130757	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64.dll v=0.0.0.0
+1508397135135	Marionette	INFO	Listening on port 10022
+1508397136052	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508399149436	geckodriver	INFO	geckodriver 0.18.0
+1508399149452	geckodriver	INFO	Listening on 127.0.0.1:11000
+1508399151546	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64.dll v=0.0.0.0
+1508399155969	Marionette	INFO	Listening on port 11006
+1508399156833	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://s1.bdstatic.com/r/www/cache/static/plugins/every_cookie_4644b13.js, line 4: ReferenceError: c is not defined
+1508399160329	geckodriver	INFO	geckodriver 0.18.0
+1508399160329	geckodriver	INFO	Listening on 127.0.0.1:11047
+1508399162454	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64.dll v=0.0.0.0
+1508399166786	Marionette	INFO	Listening on port 11053
+1508399167728	Marionette	WARN	TLS certificate errors will be ignored for this session

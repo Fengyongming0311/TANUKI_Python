@@ -1,0 +1,264 @@
+﻿===============================================
+
+找元素
+find_element_by_id()
+find_element_by_name()
+find_element_by_class_name()
+find_element_by_tag_name()
+find_element_by_link_text()
+find_element_by_partial_link_text()
+find_element_by_xpath()
+find_element_by_css_selector()       
+
+===============================================
+有时候需要操作的元素是一个文字链接，那么我们可以通过 link text 或 partial link text 进行元素
+定位。
+
+<a href="http://news.baidu.com" name="tj_news">新 闻</a>
+<a href="http://tieba.baidu.com" name="tj_tieba">贴 吧</a>
+<a href="http://zhidao.baidu.com" name="tj_zhidao">一个很长的文字连接</a>
+
+通过 link text 定位元素：
+find_element_by_link_text("新 闻")
+find_element_by_link_text("贴 吧")
+find_element_by_link_text("一个很长的文字连接")
+通 partial link text 也可以定位到上面几个元素：
+find_element_by_partial_link_text("新")
+find_element_by_partial_link_text("吧")
+find_element_by_partial_link_text("一个很长的")
+===================================================
+获取元素的文本
+text=driver.find_element_by_id("cp").text
+print text
+===================================================
+获得属性值get_attribute(name)
+#返回元素的属性值，可以是 id、name、type 或元素拥有的其它任意属性
+attribute=driver.find_element_by_id("kw").get_attribute('type')
+print attribute
+===================================================
+鼠标操作
+clear 清除元素的内容，如果可以的话
+send_keys 在元素上模拟按键输入
+click 单击元素
+submit 提交表单
+context_click() 右击
+double_click() 双击
+drag_and_drop() 拖动
+move_to_element() 鼠标悬停在一个元素上
+click_and_hold() 按下鼠标左键在一个元素上
+
+===============================================
+引入 Keys 键盘包
+from selenium.webdriver.common.keys import Keys
+下面经常使用到的键盘操作：
+
+send_keys(Keys.BACK_SPACE) 删除键（BackSpace）
+send_keys(Keys.SPACE) 空格键(Space)
+send_keys(Keys.TAB) 制表键(Tab)
+send_keys(Keys.ESCAPE) 回退键（Esc）
+send_keys(Keys.ENTER) 回车键（Enter）
+send_keys(Keys.CONTROL,'a') 全选（Ctrl+A）
+send_keys(Keys.CONTROL,'c') 复制（Ctrl+C）
+send_keys(Keys.CONTROL,'x') 剪切（Ctrl+X）
+send_keys(Keys.CONTROL,'v') 粘贴（Ctrl+V）
+
+===============================================
+ADD = '\ue025'
+ALT = '\ue00a'
+ARROW_DOWN = '\ue015'
+send_keys(Keys.('\ue012'))
+ARROW_LEFT = '\ue012'
+ARROW_RIGHT = '\ue014'
+ARROW_UP = '\ue013'
+BACKSPACE = '\ue003'
+BACK_SPACE = '\ue003'
+CANCEL = '\ue001'
+CLEAR = '\ue005'
+COMMAND = '\ue03d'
+CONTROL = '\ue009'
+DECIMAL = '\ue028'
+DELETE = '\ue017'
+DIVIDE = '\ue029'
+DOWN = '\ue015'
+END = '\ue010'
+ENTER = '\ue007'
+EQUALS = '\ue019'
+ESCAPE = '\ue00c'
+F1 = '\ue031'
+F10 = '\ue03a'
+F11 = '\ue03b'
+F12 = '\ue03c'
+F2 = '\ue032'
+F3 = '\ue033'
+F4 = '\ue034'
+F5 = '\ue035'
+F6 = '\ue036'
+F7 = '\ue037'
+F8 = '\ue038'
+F9 = '\ue039'
+HELP = '\ue002'
+HOME = '\ue011'
+INSERT = '\ue016'
+LEFT = '\ue012'
+LEFT_ALT = '\ue00a'
+LEFT_CONTROL = '\ue009'
+LEFT_SHIFT = '\ue008'
+META = '\ue03d'
+MULTIPLY = '\ue024'
+NULL = '\ue000'
+NUMPAD0 = '\ue01a'
+NUMPAD1 = '\ue01b'
+NUMPAD2 = '\ue01c'
+NUMPAD3 = '\ue01d'
+NUMPAD4 = '\ue01e'
+NUMPAD5 = '\ue01f'
+NUMPAD6 = '\ue020'
+NUMPAD7 = '\ue021'
+NUMPAD8 = '\ue022'
+NUMPAD9 = '\ue023'
+PAGE_DOWN = '\ue00f'
+PAGE_UP = '\ue00e'
+PAUSE = '\ue00b'
+RETURN = '\ue006'
+RIGHT = '\ue014'
+SEMICOLON = '\ue018'
+SEPARATOR = '\ue026'
+SHIFT = '\ue008'
+SPACE = '\ue00d'
+SUBTRACT = '\ue027'
+TAB = '\ue004'
+UP = '\ue013'
+
+
+===============================================
+
+#获得前面title，打印
+title = driver.title
+print title
+
+
+#获得前面URL，打印
+now_url = driver.current_url
+print now_url
+
+#获得登录成功的用户，打印
+now_user=driver.find_element_by_xpath("//div[@id='Nav']/ul/li[4]/a[1]/span")
+.text
+
+
+本例中涉及到新的方法如下：
+title
+返回当前页面的标题
+current_url
+获取当前加载页面的URL
+
+
+===============================================
+例如，有下面一组元素：
+
+<input type="checkbox" data-node="594434499" data-convert="1" data-type="file">
+<input type="checkbox" data-node="594434498" data-convert="1" data-type="file">
+<input type="checkbox" data-node="594434493" data-convert="1" data-type="file">
+<input type="checkbox" data-node="594434497" data-convert="1" data-type="file">
+
+通过find_elements 获得一组元素，通过循环遍历打到想要的元素：
+
+
+# 选择页面上所有的tag name 为input 的元素
+inputs = driver.find_elements_by_tag_name('input')
+#然后循环遍历出data-node 为594434493的元素，单击勾选
+for input in inputs:
+if input.get_attribute('data-node') == '594434493':
+input.click()
+
+===============================================
+
+数据驱动（参数化）
+
+创建data.txt 文件，向文件内写放三行数据
+
+chongshi
+selenium
+bokeyuan
+
+下面是代码：
+
+#coding=utf-8
+from selenium import webdriver
+import os,time
+source = open("D:\\abc\\data.txt", "r")
+values = source.readlines()
+source.close()
+
+# 执行循环
+for serch in values:
+browser = webdriver.Firefox()
+browser.get("http://www.baidu.com")
+browser.find_element_by_id("kw").send_keys(serch)
+browser.find_element_by_id("su").click()
+browser.quit()
+
+===============================================
+webdriver 中处理 JavaScript 所生成的 alert、confirm 以及 prompt
+具体思路是使用switch_to.alert()方法定位到 alert/confirm/prompt。
+然后使用 text/accept/dismiss/send_keys 按需进行操做。
+ text 返回 alert/confirm/prompt 中的文字信息。
+ accept 点击确认按钮。
+ dismiss 点击取消按钮，如果有的话。
+ send_keys 输入值，这个 alert\confirm 没有对话框就不能用了，不然会报错。
+
+实例
+#进入alert后切换到alert
+alert=driver.switch_to_alert()
+#接收警告信息
+alert.accept()
+dirver.quit()
+
+print (alert.text())
+#得到文本信息并打印
+
+#取消对话框（如果有的话）
+alert.dismiss()
+
+#输入值（如果有的话）
+alert.send_keys('xxx')
+
+===========================================
+上传文件  P77
+autoIT上传
+
+
+########################################
+当 webdriver 遇到没法完成的操作时，可以考虑借用 JavaScript 来完成P80页
+调用js 代码execute_script()
+
+实例
+#######通过 JS 隐藏选中的元素##########第一种方法：
+#隐藏文字信息
+driver.execute_script('$("#tooltip").fadeOut();')
+time.sleep(5)
+#隐藏按钮：
+button = driver.find_element_by_class_name('btn')
+driver.execute_script('$(arguments[0]).fadeOut()',button)
+time.sleep(5)
+
+===================================================================
+# 获得 cookie 信息
+cookie= driver.get_cookies()
+#将获得 cookie 的信息打印
+print cookie
+这样会打印出所有cookie
+下面对cookie进行操作找到自己想要的信息
+P87页
+====================================================================
+通过WPS或Execl创建表格，文件存为csv,进行循环读取
+
+
+
+
+
+
+
+
+
+

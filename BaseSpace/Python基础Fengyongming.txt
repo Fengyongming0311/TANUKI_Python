@@ -1,0 +1,285 @@
+﻿发布： 在setup文件夹下输入：setup.py sdist
+然后再输入：setup.py install 
+即可将自己写的代码放到python的lib库中
+===============================================
+list = [1,5,8,2,77,3,2,86,123,41,22]
+
+don = sorted(list)  
+做了一个复制并排序
+
+print (don) 
+
+打印结果
+[1, 2, 2, 3, 5, 8, 22, 41, 77, 86, 123]
+===============================================
+#coding:utf-8
+# coding=utf-8
+#-*-coding:gbk-*-
+
+将各种unicode转码显示为汉字！！！！！！
+print bak.decode('raw_unicode_escape')  #2.7语法
+
+###############################################
+
+python 遍历列表
+for i in list
+
+for i in range(len(list))
+list[i]
+
+for index,item in enumerate(list)
+process(index,item)
+
+###############################################
+strip   剔除
+声明：s为字符串，rm为要删除的字符序列
+s.strip(rm)        删除s字符串中开头、结尾处，位于 rm删除序列的字符   不能剔除在中间的字符
+
+例如：
+a = '2015-三 09-30 '
+b = a.strip('三')
+print (b)
+>>>2015-三 09-30 
+
+
+s.lstrip(rm)       删除s字符串中开头处，位于 rm删除序列的字符
+s.rstrip(rm)      删除s字符串中结尾处，位于 rm删除序列的字符
+
+###############################################
+分割
+str = ('www.google.com')
+print str
+>>>www.google.com
+str_split = str.split('.')
+print str_split
+>>>['www' , 'google' ,'com']
+
+
+
+str = ('www.google.com')
+
+str_split = str.split('.'，1)
+>>>['www' , 'google.com']
+
+###############################################
+文件写入
+
+wirte（）方法把字符串写入文件，writelines（）方法可以把列表中存储的内容写入文件。
+
+f=file("hello.txt","w+")
+
+li=["hello world\n","hello china\n"]
+
+f.writelines(li)
+
+f.close()
+
+
+文件的内容：
+
+hello world
+
+hello china
+
+write()和writelines()这两个方法在写入前会清除文件中原有的内容，再重新写入新的内容，相当于“覆盖”的方法。如果需要保留文件中原有的内容，只是需要追加新的内容，可以使用“a+”模式
+
+打开文件。
+
+
+f=file("hello.txt","a+")
+
+new_context="goodbye"
+
+f.write(new_content)
+
+f.close()
+
+此时hello.txt中的内容如下所示：
+
+hello world
+
+hello china
+
+goodbye
+
+
+==========================================================
+循环   for
+
+sum = 0
+for x in range(101):
+    sum = sum + x
+print sum
+
+sum = 0
+for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+    sum = sum + x
+print sum
+
+
+
+for语句也可以else语句块中止，可可以和break和continue一块使用
+ for target in object:
+     # statementSuite1
+     if boolenExpression1:
+         break
+     if boolenExpression2:
+         continue
+ else:
+     statementSuite2
+for循环正常退出后，执行else块
+break语句提供了for循环的异常退出，跳过else子句
+continue语句终止目前的循环异常，继续循环余下的部分
+
+==========================================================
+while  循环
+
+sum = 0
+n = 99
+while n > 0:
+    sum = sum + n
+    n = n - 2
+print sum
+
+
+python中while语句后面可以使用else从句
+while 条件判断：
+     语句块
+else :
+     语句块
+
+
+==========================================================
+格式化输出 %d %s
+格式符
+格式符为真实值预留位置，并控制显示的格式。格式符可以包含有一个类型码，用以控制显示的类型，如下:
+
+%s    字符串 (采用str()的显示)
+
+%r    字符串 (采用repr()的显示)
+
+%c    单个字符
+
+%b    二进制整数
+
+%d    十进制整数
+
+%i    十进制整数
+
+%o    八进制整数
+
+%x    十六进制整数
+
+%e    指数 (基底写为e)
+
+%E    指数 (基底写为E)
+
+%f    浮点数
+
+%F    浮点数，与上相同
+
+%g    指数(e)或浮点数 (根据显示长度)
+
+%G    指数(E)或浮点数 (根据显示长度)
+
+%%    字符"%"
+
+例如：(复制出来执行)
+#coding:utf-8
+print ("I'm %s. I'm %d year old" % ('Fengyongming', 26))
+
+jump = "我是要成为海贼王的男人...."
+
+stop = 3
+
+spport = 88.76
+
+
+print ("路飞说：%s 。" %jump)
+#>>>路飞说：我是要成为海贼王的男人.... 。
+print ("路飞说：%s ,说完后JUMP就停刊了%d年..." %(jump,stop))
+#>>>路飞说：我是要成为海贼王的男人.... ,说完后JUMP就停刊了3年...
+print ("路飞说：%s ,说完后JUMP就停刊了%d年...，尾田荣一郎的支持率下降了%2f%%" %(jump,stop,spport))
+#>>>路飞说：我是要成为海贼王的男人.... ,说完后JUMP就停刊了3年...，尾田荣一郎的支持率下降了88.760000%
+print ("路飞说：%s ,说完后JUMP就停刊了%d年...，尾田荣一郎的支持率下降了%.2f%%" %(jump,stop,spport))
+#>>>路飞说：我是要成为海贼王的男人.... ,说完后JUMP就停刊了3年...，尾田荣一郎的支持率下降了88.76%
+
+#指定占位符宽度(占位符数要大于string字符数)
+print ("Name:%20s Age:%8d Height:%8.2f"%("Fengyongming",26,1.72))
+#>>>Name:        Fengyongming Age:      26 Height:    1.72
+
+#指定占位符宽度（左对齐）
+print ("Name:%-10s Age:%-8d Height:%-8.2f"%("Aviad",25,1.83))
+#>>>Name:Aviad      Age:25       Height:1.83    
+
+==========================================================
+用集合删除重复项
+distances = set()
+P166
+待补充
+
+
+###########################################################
+http://ftp.mozilla.org/pub/firefox/releases/
+###########################################################
+
+如何查看安装包的版本号
+CMD pip list  或者pip freeze
+
+
+如何安装下载下来的包
+解压文件夹
+CMD →找到文夹中包含setup.py 的路径
+python setup.py install
+
+
+下载网上的包
+pip install requests（这是包名）
+
+下载selenium driver 地方
+http://selenium-release.storage.googleapis.com/index.html
+
+
+###########################################################
+爬虫安装了requests 和bs4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
