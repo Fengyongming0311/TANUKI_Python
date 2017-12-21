@@ -6,17 +6,17 @@ import time
 
 
 #获得机器屏幕大小x,y
-def getSize(dr):
-	x = dr.get_window_size()['width']
+def getSize(driver):
+	x = driver.get_window_size()['width']
 
-	y = dr.get_window_size()['height']
+	y = driver.get_window_size()['height']
 
 	return (x, y)
 
 
 #屏幕向上滑动
-def shanghua(dr,t):
-	l = getSize(dr)
+def shanghua(driver, t):
+	l = getSize(driver)
 
 	x1 = int(l[0] * 0.5)  #x坐标
 
@@ -24,12 +24,12 @@ def shanghua(dr,t):
 
 	y2 = int(l[1] * 0.25)   #终点y坐标
 
-	dr.swipe(x1, y1, x1, y2,t)
+	driver.swipe(x1, y1, x1, y2,t)
 
 
 #屏幕向下滑动
-def xiahua(dr,t):
-	l = getSize(dr)
+def xiahua(driver, t):
+	l = getSize(driver)
 
 	x1 = int(l[0] * 0.5)  #x坐标
 
@@ -37,44 +37,44 @@ def xiahua(dr,t):
 
 	y2 = int(l[1] * 0.75)   #终点y坐标
 
-	dr.swipe(x1, y1, x1, y2,t)
+	driver.swipe(x1, y1, x1, y2,t)
 
 
 #屏幕向左滑动
-def zuohua(dr,t):
-	l=getSize(dr)
+def zuohua(driver, t):
+	l = getSize(driver)
 
-	x1=int(l[0]*0.75)
+	x1 = int(l[0]*0.75)
 
-	y1=int(l[1]*0.5)
+	y1 = int(l[1]*0.5)
 
-	x2=int(l[0]*0.05)
+	x2 = int(l[0]*0.05)
 
-	dr.swipe(x1,y1,x2,y1,t)
+	driver.swipe(x1,y1,x2,y1,t)
 
 #屏幕向右滑动
-def youhua(dr,t):
-	l=getSize(dr)
+def youhua(driver, t):
+	l = getSize(driver)
 
-	x1=int(l[0]*0.05)
+	x1 = int(l[0]*0.05)
 
-	y1=int(l[1]*0.5)
+	y1 = int(l[1]*0.5)
 
-	x2=int(l[0]*0.75)
+	x2 = int(l[0]*0.75)
 
-	dr.swipe(x1,y1,x2,y1,t)
+	driver.swipe(x1,y1,x2,y1,t)
 
 
 '''
-#调用向左滑动
-zuohua(1000)
+#调用向左滑动  5为持续时间
+zuohua(driver,1000)
 
 #调用向右滑动
-youhua(1000)
+youhua(driver,1000)
 
 #调用向上滑动
-shanghua(1000)
+shanghua(driver,1000)
 
 #调用向下滑动
-xiahua(1000)
+xiahua(driver,1000)
 '''

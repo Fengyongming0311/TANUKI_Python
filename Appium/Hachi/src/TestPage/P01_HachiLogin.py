@@ -6,7 +6,6 @@ import time
 ###
 import sys
 sys.path.append("..")
-from TestPage import P02_Loginout
 import huadong
 ###
 

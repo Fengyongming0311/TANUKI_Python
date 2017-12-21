@@ -1,6 +1,16 @@
 https://www.cnblogs.com/forcepush/p/6721828.html
 python -m pydoc -p 4895
 
+
+//另外，原生和H5混合页面，XPath比较好用：
+driver.findElementByXPath("//android.widget.TextView[contains(@text,'账户')]").click();
+
+driver.findElementByXPath("//android.view.View[contains(@resource-id,'switchAccount')]").click();
+
+driver.findElementByXPath("//android.view.View[contains(@content-desc,'绑定')]").click();
+
+
+
 切换框架
 driver.switch_to.active_element
 driver.switch_to.alert
