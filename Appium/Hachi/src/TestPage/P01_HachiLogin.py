@@ -71,3 +71,18 @@ class P01_HachiLogin:
         #com.pujitech.pujiejia:id/btn_login
         #点击立即登录
 
+        #对登录后的页面进行截图
+        import os
+        img_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + '\\Screenshots\\'
+        timestamp = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
+        screen_save_path = img_folder + timestamp + "登录截图" + '.png'
+        time.sleep(3)
+        driver.get_screenshot_as_file(screen_save_path)
+
+        #对登录后的页面进行断言判断是否登录成功
+        username = driver.find_element_by_id("com.pujitech.pujiejia:id/tv_user_center_phone")
+        if username.text == '13263160105':
+            print ("case is Pass")
+        else:
+            print ("case is Failed")
+

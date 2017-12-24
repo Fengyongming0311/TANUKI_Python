@@ -13,14 +13,17 @@ sys.path.append("../TestPage")
 from P01_HachiLogin import P01_HachiLogin
 from P02_Loginout import P02_Loginout
 from P03_qiehuanloupan import P03_qiehuanloupan
+from P04_jingpinloupan import P04_jingpinloupan
 ######################################
 
 shouji = testphone.testphone()
 driver = webdriver.Remote('http://localhost:4723/wd/hub', shouji)
 
-#P01_HachiLogin.P01_HachiLogin(driver)
+P01_HachiLogin.P01_HachiLogin(driver)
 #文件.类名(class).方法名
 
-P03_qiehuanloupan.P03_qiehuanloupan(driver)
+#P03_qiehuanloupan.P03_qiehuanloupan(driver)
+
+#P04_jingpinloupan.P04_jingpinloupan(driver)
 
 #driver.quit()

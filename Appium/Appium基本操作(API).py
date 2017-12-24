@@ -1,6 +1,16 @@
 https://www.cnblogs.com/forcepush/p/6721828.html
 python -m pydoc -p 4895
 
+Appium定位顺序
+1、ID
+2、class
+3、uiautomator
+4、xpath
+5、accessibility_id(即content-desc)
+
+
+
+
 
 //另外，原生和H5混合页面，XPath比较好用：
 driver.findElementByXPath("//android.widget.TextView[contains(@text,'账户')]").click();
@@ -9,9 +19,14 @@ driver.findElementByXPath("//android.view.View[contains(@resource-id,'switchAcco
 
 driver.findElementByXPath("//android.view.View[contains(@content-desc,'绑定')]").click();
 
+'''
+获取当前页面所有可点击的按钮？？
+Listelements = driver.find_element_by_xpath("//*")
+print (Listelements)
+'''
 
 
-切换框架
+//切换框架
 driver.switch_to.active_element
 driver.switch_to.alert
 driver.switch_to.default_content
@@ -93,7 +108,7 @@ view 都赋予一个唯一的 contentDescription。
 性。
 '''
 driver.find_element_by_accessibility_id('push_button').click() 
-
+driver.find_element_by_accessibility_id("天猫超市").click()
 
 
 '''android uiautomator 定位
@@ -119,13 +134,41 @@ driver.find_element_by_android_uiautomator('new UiSelector().clickable(true).tex
 Appium对于xpath定位执行效率是比较低的，也就是说遇到xpath的定位代码的时候，执行比较慢。迫不得已的情况下尽量不用这个定位方式。
 '''
 
+my_home = driver.find_element_by_xpath("//*[@class='android.widget.FrameLayout'][5]").click()  
+
+
+'''
+当前我的索引是4，底部一共有5个按钮，说明索引是从0开始算。本篇我们要学习xpath定位，
+但是xpath索引是从1开始计算的。利用xpath定位的思路是：先根据class定位到五个元素，
+然后根据索引5来精确定位到“我的”模块。
+'''
+# 点击“我的”  
+driver.find_element_by_xpath("//*[@class='android.widget.FrameLayout' and @index='4']").click()  
+time.sleep(2)  
+# 点击“我的关注“  
+driver.find_element_by_xpath("//*[@class='android.widget.FrameLayout' and @index='3']").click()  
+time.sleep(2)  
+# 点击“麦克风“  
+driver.find_element_by_xpath("//*[@class='android.widget.FrameLayout' and @index='2']").click()  
+time.sleep(2)  
+# 点击““视频  
+driver.find_element_by_xpath("//*[@class='android.widget.FrameLayout' and @index='1']").click()  
+time.sleep(2)  
+# 点击“默认主页“  
+driver.find_element_by_xpath("//*[@class='android.widget.FrameLayout' and @index='0']").click()  
 
 
 '''driver.find_element_by_ios_uiautomation()'''
 
 
 
-
+截图代码
+img_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + '\\Screenshots\\'
+#####F:\githubup\Appium\Hachi\src\screenshots\
+timestamp = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
+#####显示时间格式为201712240326
+screen_save_path = img_folder + timestamp + '.png'
+driver.get_screenshot_as_file(screen_save_path)
 
 ================================================================================================================================
 获取手机name    连接手机   
