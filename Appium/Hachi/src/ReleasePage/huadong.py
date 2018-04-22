@@ -4,7 +4,7 @@ from appium import webdriver
 import time
 
 
-#滑动是数值越小滑动的速度越快滑动的页面越多
+
 #获得机器屏幕大小x,y
 def getSize(driver):
 	x = driver.get_window_size()['width']

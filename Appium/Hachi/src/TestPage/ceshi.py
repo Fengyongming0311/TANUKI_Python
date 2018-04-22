@@ -16,7 +16,7 @@ desired_caps['appActivity'] = 'com.adesk.picasso.view.MainActivity'
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-time.sleep(8)
+time.sleep(15)
 driver.close_app()
 
 while 1:

@@ -414,8 +414,11 @@ def get_config():
 def geshihuashuju(zhongzhuan):
 	del zhongzhuan[0]	#删除第一行部门数据
 	del zhongzhuan[1]   #再次删除考勤号码列
-	for m in range(5):
-		del zhongzhuan[2]	#删除机器号#删除编号#删除比对方式#删除卡号
+	try:
+		for m in range(6):
+			del zhongzhuan[2]	#删除机器号#删除编号#删除比对方式#删除卡号
+	except:
+		pass
 	try:
 		date, time = zhongzhuan[1].split(' ')	
 	except Exception as e:

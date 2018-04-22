@@ -8,7 +8,7 @@ from Public import information
 
 def testphone():
     path = os.path.abspath(os.path.join(os.path.dirname(__file__),"..")) #获取当前项目的根路径
-    print (path)
+    #print ("当前项目的根路径为：",path)
     f = open( path + '\\Public\\test_phone.yaml', 'rb')
     files = yaml.load(f)
     f.close()
@@ -21,5 +21,5 @@ def testphone():
     else:
         print('您在test_phone.yaml输入的测试机没有相关信息')
         shouji = '空'
-    print('获取到用来测试的手机信息为：%s' %shouji)
+    #print('获取到用来测试的手机信息为：%s' %shouji)
     return shouji

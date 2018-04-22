@@ -1,5 +1,9 @@
 https://www.cnblogs.com/forcepush/p/6721828.html
+查看API文档
+
 python -m pydoc -p 4895
+
+-p 4895   为设置的端口号
 
 Appium定位顺序
 1、ID
@@ -8,6 +12,67 @@ Appium定位顺序
 4、xpath
 5、accessibility_id(即content-desc)
 
+
+等待
+# 获取当前界面activity
+time.sleep(3)
+ac = driver.current_activity
+print(ac)
+
+获取当前页面的源
+url = driver.page_source()
+print (url)
+
+# 等主页面activity出现,30秒内
+driver.wait_activity(".base.ui.MainActivity", 30)
+https://www.cnblogs.com/caoj/p/7813257.html
+
+
+上下文
+将上下文切换到默认上下文  driver.switch_to.context(None)
+
+获取当前页面是否原生和H5获取当前所有的可用的上下文
+time.sleep(3)
+ct = driver.contexts
+print ("ct===",ct)
+
+
+获取当前的可用的上下文。注意这个方不要括号“()”，不要入参。
+例：
+time.sleep(3)
+cct = driver.current_context
+print ("cct===",cct)
+
+
+切换上下文
+切换到特定的上下文中。
+driver.switchTo()
+driver.switch_to.context('NATIVE_APP')
+driver.switch_to.context('WEBVIEW_1')
+
+
+dondake = driver.find_elements_by_xpath("//*")
+for i in dondake:
+    print (i)
+    print (i.text)
+是否能查到所有elements
+
+1、精确匹配  //UIAButton[@name="全部"]
+
+2、模糊匹配 //UIAButton[@name starts-with "全"]
+
+3、模糊匹配 //UIAButton[@name contains "全"]
+
+
+一、xpath基本语法：
+
+表达式	描述
+nodename	选取此节点的所有子节点。
+/	从根节点选取。
+//	从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。
+.	选取当前节点。
+..	选取当前节点的父节点。
+@	选取属性。
 
 
 
