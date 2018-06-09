@@ -1,7 +1,15 @@
 python内置函数
 Python dir() 函数
 
+https://www.cnblogs.com/mq0036/p/7205626.html
+self.assertEqual('Action Bar', els[1].text)
+self.assertEqual(a,b,msg=msg)   #判断a与1.b是否一致，msg类似备注，可以为空
+self.assertNotEqual(a,b,msg=msg)  #判断a与b是否不一致
+self.assertTrue(a,msg=none)    #判断a是否为True
+self.assertFalse(b,msg=none)   #判断b是否为false
+
 ======================================================================
+python 获得对象的所有属性和方法
 描述
 dir() 函数不带参数时，返回当前范围内的变量、方法和定义的类型列表；带参数时，返回参数的属性、方法列表。如果参数包含方法__dir__()，该方法将被调用。如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
 
@@ -23,6 +31,17 @@ object -- 对象、变量、类型。
 >>> dir([ ])    # 查看列表的方法
 ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__delslice__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getslice__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__setslice__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
 >>>
+
+要判断对象是否有某个属性，可以用：
+
+
+
+
+hasattr(Object, "name")
+如：
+hasattr(self,"diaplay_name")
+如果有这个属性，会返回True
+
 ======================================================================
 
 表示之后的为注释  #
@@ -374,3 +393,10 @@ JSON建构于两种结构：
 “名称/值”对的集合（A collection of name/value pairs）。不同的语言中，它被理解为对象（object），纪录（record），结构（struct），字典（dictionary），哈希表（hash table），有键列表（keyed list），或者关联数组 （associative array）。
 值的有序列表（An ordered list of values）。在大部分语言中，它被理解为数组（array）。
 这些都是常见的数据结构。事实上大部分现代计算机语言都以某种形式支持它们。这使得一种数据格式在同样基于这些结构的编程语言之间交换成为可能。
+
+
+==========================
+查看XX端口是否被占用
+netstat -ano | findstr 5037
+
+==========================

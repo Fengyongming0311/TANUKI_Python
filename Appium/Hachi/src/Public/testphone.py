@@ -13,11 +13,14 @@ def testphone():
     files = yaml.load(f)
     f.close()
     file = files['Phone']
-    if file == 'VIVO':
-        shouji = information.VIVO()
-    #手头上还没有其他手机...
-    elif file == 'NOTE2':
-        shouji = information.NOTE2()
+    if file == 'VIVO_X9':
+        shouji = information.VIVO_X9()
+    elif file == 'huawei_NOT8':
+        shouji = information.huawei_NOT8()
+    elif file == 'huawei_P9':
+        shouji = information.huawei_P9()
+    elif file == 'hw_honor_V9':
+        shouji = information.hw_honor_P9()
     else:
         print('您在test_phone.yaml输入的测试机没有相关信息')
         shouji = '空'

@@ -16,6 +16,6 @@ def get_week_day(date):
 	return week_day_dict[day]
 
 
-date = '2017/11/28'
+date = '2018/05/03'
 
 print (get_week_day(date))

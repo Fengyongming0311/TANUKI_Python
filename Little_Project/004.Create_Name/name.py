@@ -30,12 +30,16 @@ def firstname():
 		#先用读的方式打开然后关闭，下次再以写的方式重新写入
 		firstname = random.choice(fname)
 		#随机取出一个姓
-		fname.remove(firstname)
 		firstname = firstname.strip()
-
+		#去除后边的空格
+		'''
+		#若要取一个姓后从列表中删除这个姓，取消这些代码注释
+		fname.remove(firstname)
 		re = open('姓ANSI.txt', 'w+')
 		re.writelines(fname)
 		re.close()
+		#若要取一个姓后从列表中删除这个姓，取消这些代码注释
+		'''
 
 		return firstname
 	
